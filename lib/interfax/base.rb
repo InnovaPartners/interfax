@@ -58,6 +58,11 @@ module Interfax
       @recipients = nil
       @subject = "Change me"
       @retries = "0"
+
+      @orientation = self.class.orientation || 'Portrait'
+      @high_res = self.class.high_res || 'false'
+      @fine_rendering = self.class.fine_rendering || 'true'
+      @page_size = self.class.page_size || 'Letter'
     end
     
     def contains(content)
@@ -84,7 +89,28 @@ module Interfax
       @at = time
       self
     end
-    
+  
+    def fine_rendering(boolstring)
+      @fine_rendering = boolstring
+      self
+    end
+
+    def orientation(orientation)
+      @orientation = orientation
+      self
+    end
+
+    def high_res(boolstring)
+      @high_res = boolstring
+      self
+    end
+
+    def page_size(size)
+      @page_size = size
+      self
+    end
+
+
     def summary
       { 
         :fax_numbers => @recipients, 
@@ -107,10 +133,10 @@ module Interfax
         :FilesData => @content,
         :FileSizes => @content.size,
         :Subject => @subject,
-        :PageSize => 'A4',
-        :PageOrientation => 'Portrait',
-        :IsHighResolution => 'true',
-        :IsFineRendering => 'false'
+        :PageSize => @page_size,
+        :PageOrientation => @orientation,
+        :IsHighResolution => @high_res,
+        :IsFineRendering => @fine_rendering
       )
       result ? result.sendfaxEx_2Result : nil
     end
