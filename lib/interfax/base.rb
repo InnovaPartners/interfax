@@ -7,6 +7,7 @@ module Interfax
     
     class << self
       attr_accessor :username, :password
+      attr_accessor :orientation, :page_size, :high_res, :fine_rendering
 
       def query(verb,verbdata,limit=-1)
         result = SOAP::WSDLDriverFactory.new("https://ws.interfax.net/dfs.asmx?WSDL").create_rpc_driver.FaxQuery(
