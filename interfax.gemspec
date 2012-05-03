@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{interfax}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Sascha Brink"]
+  s.authors = ["Sascha Brink", "Jon Canady"]
   s.date = %q{2011-05-19}
   s.description = %q{A ruby wrapper for the interfax webservice (SOAP)}
-  s.email = %q{sascha.brink@gmail.com}
+  s.email = %q{jcanady@innova-partners.com}
   s.extra_rdoc_files = [
     "LICENSE",
     "README.markdown"
@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
     "spec/spec.opts",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/sbrink/interfax}
+  s.homepage = %q{http://github.com/innovapartners/interfax}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{A ruby wrapper for the interfax webservice (SOAP)}
