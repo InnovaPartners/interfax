@@ -4,7 +4,7 @@ This gem is a drop-in replacement for the [Interfax
 gem](http://rubygems.org/gems/interfax), with the exception that this one runs
 on Ruby 1.9.
 
-Below is the original Interfax README.
+Below is an updated copy of the original Interfax README.
 
 ---
 
@@ -22,7 +22,13 @@ If you're willing to help, just drop me a line.
 
 ## Installation
 
-    gem install interfax
+    gem install interfax19
+
+To use with Bundler, add the following line to your `Gemfile`:
+
+```ruby
+gem "interfax19", require: "interfax"
+```
 
 ## Usage
 
