@@ -36,6 +36,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{A ruby wrapper for the interfax webservice (SOAP)}
 
+  s.add_dependency "mumboe-soap4r"
+
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
