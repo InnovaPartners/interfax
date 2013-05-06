@@ -119,20 +119,24 @@ module Interfax
         :at => @at,
         :retries => @retries,
         :subject => @subject,
-        :username => @username
+        :username => @username,
+        :orientation => @orientation,
+        :page_size => @page_size
       }
     end
     
     def deliver
-      result = SOAP::WSDLDriverFactory.new("https://ws.interfax.net/dfs.asmx?WSDL").create_rpc_driver.SendfaxEx_2(
+      driver = SOAP::WSDLDriverFactory.new("https://ws.interfax.net/dfs.asmx?WSDL").create_rpc_driver
+      
+      result = driver.SendfaxEx_2(
         :Username => @username,
         :Password => @password,
         :FileTypes => @type,
         :Postpone => @at,
         :RetriesToPerform => @retries,
         :FaxNumbers=> @recipients,
+        :FileSizes => @content.bytesize,
         :FilesData => @content,
-        :FileSizes => @content.size,
         :Subject => @subject,
         :PageSize => @page_size,
         :PageOrientation => @orientation,
