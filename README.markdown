@@ -1,3 +1,13 @@
+# Interfax: Now with Ruby 1.9 compatibility
+
+This gem is a drop-in replacement for the [Interfax
+gem](http://rubygems.org/gems/interfax), with the exception that this one runs
+on Ruby 1.9.
+
+Below is the original Interfax README.
+
+---
+
 # Interfax/Ruby
 
 This library is a wrapper for the interfax.net fax service. For now,
